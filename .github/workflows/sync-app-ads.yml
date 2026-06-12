@@ -1,0 +1,33 @@
+name: Sync app-ads.txt
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # her gün 06:00 UTC
+  workflow_dispatch:        # Actions sekmesinden elle de tetiklenir
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build app-ads.txt (kendi AdMob satırı + CAS listesi)
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/main/app-ads.txt -o cas.txt
+          {
+            echo "google.com, pub-7927124218254646, DIRECT, f08c47fec0942fa0"
+            cat cas.txt
+          } > app-ads.txt
+          rm cas.txt
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app-ads.txt
+          git diff --staged --quiet || git commit -m "chore: sync app-ads.txt with CAS list"
+          git push
