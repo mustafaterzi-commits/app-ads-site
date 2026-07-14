@@ -2,7 +2,7 @@ name: Sync app-ads.txt
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # her gün 06:00 UTC
+        - cron: "0 */12 * * *"   # günde 2 kez: 00:00 ve 12:00 UTC
   workflow_dispatch:        # Actions sekmesinden elle de tetiklenir
 
 permissions:
