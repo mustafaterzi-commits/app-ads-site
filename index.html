@@ -1,1 +1,179 @@
-<meta http-equiv="refresh" content="0; url=https://sites.google.com/rizeteknoloji.com.tr/wavvy-tv-plus/home" />
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rize Teknoloji: Wavvy apps for Android TV, phone and tablet</title>
+<meta name="description" content="Rize Teknoloji builds the Wavvy apps for Android TV, phone and tablet: Wavvy TV Plus, a player for your own IPTV playlists, and Wavvy IP Camera.">
+<link rel="canonical" href="https://rizeteknoloji.com.tr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230057ff'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23fff' text-anchor='middle'%3ERT%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Rize Teknoloji">
+<meta property="og:description" content="The Wavvy apps for Android TV, phone and tablet.">
+<meta property="og:url" content="https://rizeteknoloji.com.tr/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tvplus.rizeteknoloji.com.tr/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Rize Teknoloji","url":"https://rizeteknoloji.com.tr/","email":"support@rizeteknoloji.com.tr","address":{"@type":"PostalAddress","addressLocality":"Rize","addressCountry":"TR"},"sameAs":["https://play.google.com/store/apps/developer?id=Rize+Teknoloji"]}
+</script>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#141a2e;--muted:#5b6478;--line:#e1e5ef;--brand:#0057ff;--chip:#eef1f8;--ok:#0a8f5a;--soon:#b86e00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050b1c;--card:#0f1731;--ink:#e8ecf7;--muted:#a3adc6;--line:#222d52;--brand:#00e5ff;--chip:#18223f;--ok:#3ddc97;--soon:#ffb547}}
+:root[data-theme="dark"]{--bg:#050b1c;--card:#0f1731;--ink:#e8ecf7;--muted:#a3adc6;--line:#222d52;--brand:#00e5ff;--chip:#18223f;--ok:#3ddc97;--soon:#ffb547}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--brand)}
+html[lang="en"] [lang="tr"],html[lang="tr"] [lang="en"]{display:none}
+
+.hero{background:linear-gradient(160deg,#0a1f5c 0%,#050b1c 72%);color:#fff}
+.hero .in{max-width:960px;margin:0 auto;padding:22px 16px 64px}
+.bar{display:flex;align-items:center;gap:12px;margin-bottom:56px}
+.logo{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:#0057ff;font-weight:700;font-size:16px;color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.bar .name{font-weight:700;font-size:18px;margin-right:auto}
+.langsw{display:flex;gap:4px;background:rgba(255,255,255,.1);border-radius:999px;padding:3px}
+.langsw button{font:600 13px/1 inherit;font-family:inherit;color:rgba(255,255,255,.8);background:none;border:0;border-radius:999px;padding:7px 12px;cursor:pointer}
+.langsw button[aria-pressed="true"]{background:#fff;color:#0057ff}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#00e5ff;margin-bottom:12px}
+.hero h1{font-size:46px;line-height:1.1;margin:0 0 16px;letter-spacing:-.02em;max-width:720px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#00e5ff,#4d8dff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:#c3cbe0;margin:0;max-width:600px}
+
+main{max-width:960px;margin:-32px auto 0;padding:0 16px 56px}
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.app{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(5,11,28,.08)}
+.app .head{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.app img{width:64px;height:64px;border-radius:16px;flex:none}
+.app h2{font-size:20px;line-height:1.25;margin:0 0 4px}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.status.live{color:var(--ok)}
+.status.soon{color:var(--soon)}
+.app p{color:var(--muted);margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none}
+.tags li{font-size:12.5px;background:var(--chip);border-radius:999px;padding:3px 11px}
+.actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.play{display:inline-flex;align-items:center;gap:9px;background:#050b1c;color:#fff;text-decoration:none;font-weight:600;border-radius:12px;padding:11px 18px;font-size:15px}
+.play:hover{background:#1a2445}
+.play svg{width:19px;height:19px;flex:none}
+.link{font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:10px 16px}
+.link:hover{background:var(--chip)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .play{background:#fff;color:#050b1c}:root:not([data-theme="light"]) .play:hover{background:#dfe6ff}}
+
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-top:40px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.box h2{font-size:18px;margin:0 0 8px}
+.box p{margin:0 0 10px;color:var(--muted)}
+.box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.box dt{color:var(--muted)}
+.box dd{margin:0;overflow-wrap:anywhere}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 36px}
+
+@media (max-width:720px){
+ .bar{margin-bottom:36px}
+ .hero h1{font-size:32px}
+ .hero p{font-size:16px}
+ .hero .in{padding-bottom:56px}
+ .about{grid-template-columns:1fr}
+ .apps{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="in">
+  <div class="bar">
+   <span class="logo" aria-hidden="true">RT</span>
+   <span class="name">Rize Teknoloji</span>
+   <div class="langsw" role="group" aria-label="Language">
+    <button type="button" data-set="en" aria-pressed="true">EN</button>
+    <button type="button" data-set="tr" aria-pressed="false">TR</button>
+   </div>
+  </div>
+  <span class="eyebrow"><span lang="en">Our apps</span><span lang="tr">Uygulamalarımız</span></span>
+  <h1 lang="en">Apps for the <em>big screen</em> and the one in your pocket.</h1>
+  <h1 lang="tr"><em>Büyük ekran</em> ve cebindeki ekran için uygulamalar.</h1>
+  <p lang="en">We build the Wavvy apps: players that run on Android TV, phones and tablets from a single install.</p>
+  <p lang="tr">Wavvy uygulamalarını geliştiriyoruz. Android TV, telefon ve tablette tek kurulumla çalışan oynatıcılar.</p>
+ </div>
+</header>
+
+<main>
+ <div class="apps">
+  <article class="app">
+   <div class="head">
+    <img src="img/wavvy-tv-plus.png" alt="" width="64" height="64">
+    <div>
+     <h2>Wavvy TV Plus</h2>
+     <span class="status live"><span lang="en">On Google Play</span><span lang="tr">Google Play'de</span></span>
+    </div>
+   </div>
+   <p lang="en">Load your own M3U, Xtream Codes or Stalker playlist and watch live TV, movies and series with a TV guide, Multi-View and Cloud Sync.</p>
+   <p lang="tr">Kendi M3U, Xtream Codes veya Stalker listeni yükle; canlı TV, film ve dizileri TV rehberi, Multi-View ve bulut senkronuyla izle.</p>
+   <ul class="tags"><li>Android TV</li><li><span lang="en">Phone</span><span lang="tr">Telefon</span></li><li>Tablet</li><li><span lang="en">43 languages</span><span lang="tr">43 dil</span></li></ul>
+   <div class="actions">
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.wavvy.tvplus">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.3 12l-9.7 10.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#ffce00" d="m16.6 15.3-3.3-3.3 3.3-3.3 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2Z"/><path fill="#ff3a44" d="M16.6 15.3 13.3 12 3.6 22.2c.4.2.9.2 1.5-.1l11.5-6.8Z"/><path fill="#00f076" d="M16.6 8.7 5.1 1.9c-.6-.3-1.1-.3-1.5-.1L13.3 12l3.3-3.3Z"/></svg>
+     <span lang="en">Get it on Google Play</span><span lang="tr">Google Play'den indir</span>
+    </a>
+    <a class="link" href="https://tvplus.rizeteknoloji.com.tr/"><span lang="en">Website</span><span lang="tr">Web sitesi</span></a>
+   </div>
+  </article>
+
+  <article class="app">
+   <div class="head">
+    <img src="img/wavvy-cam.png" alt="" width="64" height="64">
+    <div>
+     <h2>Wavvy IP Camera</h2>
+     <span class="status soon"><span lang="en">Coming soon</span><span lang="tr">Yakında</span></span>
+    </div>
+   </div>
+   <p lang="en">Watch your RTSP and ONVIF IP cameras on the TV, phone or tablet, several at once in a multi-camera grid.</p>
+   <p lang="tr">RTSP ve ONVIF IP kameralarını TV'de, telefonda veya tablette izle; çoklu kamera ızgarasında birkaçını aynı anda gör.</p>
+   <ul class="tags"><li>Android TV</li><li><span lang="en">Phone</span><span lang="tr">Telefon</span></li><li>Tablet</li><li>RTSP · ONVIF</li></ul>
+   <div class="actions">
+    <a class="link" href="https://cam.rizeteknoloji.com.tr/"><span lang="en">Website</span><span lang="tr">Web sitesi</span></a>
+   </div>
+  </article>
+ </div>
+
+ <div class="about">
+  <section class="box">
+   <h2><span lang="en">About us</span><span lang="tr">Hakkımızda</span></h2>
+   <p lang="en">Rize Teknoloji is an independent developer based in Rize, Türkiye. We make media apps that work the same on a TV remote and a touch screen.</p>
+   <p lang="tr">Rize Teknoloji, Rize merkezli bağımsız bir geliştirici. TV kumandasında da dokunmatik ekranda da aynı şekilde çalışan medya uygulamaları yapıyoruz.</p>
+   <p><a href="https://play.google.com/store/apps/developer?id=Rize+Teknoloji"><span lang="en">All our apps on Google Play</span><span lang="tr">Google Play'deki tüm uygulamalarımız</span></a></p>
+  </section>
+  <section class="box">
+   <h2><span lang="en">Contact</span><span lang="tr">İletişim</span></h2>
+   <dl>
+    <dt><span lang="en">Support</span><span lang="tr">Destek</span></dt><dd><a href="mailto:support@rizeteknoloji.com.tr">support@rizeteknoloji.com.tr</a></dd>
+    <dt><span lang="en">Privacy</span><span lang="tr">Gizlilik</span></dt><dd><a href="mailto:privacy@rizeteknoloji.com.tr">privacy@rizeteknoloji.com.tr</a></dd>
+    <dt><span lang="en">Location</span><span lang="tr">Konum</span></dt><dd>Rize, Türkiye</dd>
+   </dl>
+  </section>
+ </div>
+</main>
+
+<footer>© <span id="y">2026</span> Rize Teknoloji</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, pick='en';
+  try{ var s=localStorage.getItem('lang'); if(s==='en'||s==='tr') pick=s; else if((navigator.language||'').toLowerCase().indexOf('tr')===0) pick='tr'; }
+  catch(e){ if((navigator.language||'').toLowerCase().indexOf('tr')===0) pick='tr'; }
+  function set(l){
+    root.lang=l;
+    document.querySelectorAll('.langsw button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-set')===l ? 'true' : 'false'); });
+  }
+  set(pick);
+  document.querySelectorAll('.langsw button').forEach(function(b){
+    b.addEventListener('click', function(){ var l=b.getAttribute('data-set'); set(l); try{ localStorage.setItem('lang', l); }catch(e){} });
+  });
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
