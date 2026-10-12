@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{url}}">
+{{hreflang}}
+<link rel="icon" href="/favicon.png" sizes="192x192" type="image/png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1533">
+<meta property="og:site_name" content="Rize Teknoloji">
+<meta property="og:title" content="Rize Teknoloji">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:image" content="https://tvplus.rizeteknoloji.com.tr/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{fonts_url}}" rel="stylesheet">
+<style>
+/* Vitrin: büyük başlık, her uygulama kendi renginde bir kutu. Renkli kutuların üstüne hep beyaz yazı gelir. */
+:root{
+  --bg:#f2f4f8; --card:#fff; --line:#dde2ec; --ink:#0b1533; --muted:#4b5672; --accent:#0b4dff;
+  --tv:#1f4fd8; --cam:#17753a; --player:#6a3fc9; --vault:#35557a; --beam:#b84e0c; --words:#0e6b6b;
+  --gold:#ffc233; --navy:#0b1533; --bezel:#10151f;
+  --display:"Bricolage Grotesque",{{font_extra}}"Arial Narrow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --body:"Instrument Sans",{{font_extra}}system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#070c1c; --card:#111a35; --line:#242e54; --ink:#eef2ff; --muted:#a3adc9; --accent:#7b9cff;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,ul,dl,dd{margin:0;padding:0}
+ul{list-style:none}
+img,svg{display:block}
+.w{max-width:1148px;margin:0 auto;padding:0 24px}
+section{scroll-margin-top:16px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* üst çubuk */
+.hd .w{display:flex;align-items:center;gap:16px;height:74px}
+.brand{display:flex;align-items:center;gap:10px;font:800 20px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.brand img{width:40px;height:40px;border-radius:12px}
+.nav{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:15px}
+.nav a{white-space:nowrap}
+.nav a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;border-radius:999px;padding:13px 22px;white-space:nowrap}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.ghost{box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn svg{flex:none;width:19px;height:19px}
+.hd .btn{padding:9px 16px;font-size:14px}
+
+/* dil menüsü */
+.lang{position:relative}
+.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:999px;padding:8px 14px;box-shadow:inset 0 0 0 1.5px var(--line);white-space:nowrap}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary svg{width:16px;height:16px;fill:currentColor}
+.lang summary::after{content:"";width:7px;height:7px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px)}
+.lang .short{display:none}
+.lang[open] summary{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.lang ul{position:absolute;right:0;top:calc(100% + 8px);z-index:10;min-width:190px;padding:6px;border-radius:16px;background:var(--card);box-shadow:0 0 0 1px var(--line),0 18px 40px -12px rgba(11,21,51,.35)}
+.lang li a{display:block;padding:8px 12px;border-radius:10px;font-size:15px;font-weight:600}
+.lang li a:hover{background:var(--bg)}
+.lang li a[aria-current]{color:var(--accent)}
+
+/* açılış */
+.hero{padding:56px 0 44px}
+.eyebrow{font-weight:700;font-size:14px;color:var(--accent);letter-spacing:.02em}
+h1{font:800 clamp(40px,8.6vw,98px)/.98 var(--display);letter-spacing:-.035em;margin:12px 0 30px;text-wrap:balance}
+mark{color:var(--navy);background:var(--gold);padding:0 .14em .04em;border-radius:.16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.herorow{display:grid;grid-template-columns:1.1fr 1fr;gap:28px 56px;align-items:end}
+.herorow>*{min-width:0}
+.lead{font-size:19px;color:var(--muted);max-width:52ch;margin-bottom:22px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:2px solid var(--ink);padding-top:14px}
+.facts li{font-size:14px;color:var(--muted);line-height:1.35}
+.facts b{display:block;font:800 clamp(34px,5vw,56px)/1 var(--display);color:var(--ink);letter-spacing:-.03em;margin-bottom:4px}
+
+/* uygulamalar */
+.sect{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+h2{font:800 clamp(26px,3.4vw,40px)/1.05 var(--display);letter-spacing:-.025em}
+.sect p{color:var(--muted)}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;padding-bottom:56px}
+.tile{grid-column:span 2;border-radius:28px;background:var(--c);color:#fff;padding:26px;display:flex;flex-direction:column;gap:22px;overflow:hidden;min-width:0}
+.tile .txt{display:flex;flex-direction:column;gap:12px;min-width:0}
+.tile .top{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.tile .top img{width:48px;height:48px;border-radius:13px;background:#fff}
+.st{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;white-space:nowrap;border-radius:999px;padding:4px 11px;background:rgba(0,0,0,.28);color:#fff}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.st.live::before{background:#5fe3a1}
+.tile h3{font:800 30px/1.05 var(--display);letter-spacing:-.02em}
+.tile p{font-size:15px;color:rgba(255,255,255,.9)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-size:12.5px;font-weight:600;border-radius:999px;padding:2px 10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+.acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tile .btn{font-size:14px;padding:9px 16px}
+.tile .btn.solid{background:#fff;color:var(--navy)}
+.tile .btn.ghost{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
+.tile .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #fff}
+.tile :focus-visible{outline-color:#fff}
+.art{margin:auto -16% -20% 16%}
+.art svg{width:100%;height:auto;border:6px solid var(--bezel);border-radius:18px;box-shadow:0 24px 44px -20px rgba(0,0,0,.6)}
+.tile.wide{grid-column:span 4;display:grid;grid-template-columns:1fr 1.05fr;align-items:center}
+.tile.wide .art{margin:0 -22% 0 0}
+.tile.wide h3{font-size:clamp(30px,4.4vw,48px)}
+.tile.about{grid-column:span 4;background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+.tile.about>*{min-width:0}
+.tile.about h3{font-size:24px;margin-bottom:10px}
+.tile.about p{color:var(--muted)}
+.tile.about dl{display:grid;gap:10px;font-size:15px}
+.tile.about dt{font-size:12.5px;font-weight:700;color:var(--muted)}
+.tile.about dd{overflow-wrap:anywhere}
+.tile.about a{color:var(--accent)}
+.tile.about :focus-visible{outline-color:var(--accent)}
+
+/* alt bilgi */
+footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:14px}
+footer .w{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer a:hover{color:var(--ink)}
+footer small{display:block;flex-basis:100%;font-size:12px}
+
+/* Devanagari gibi yüksek harfli yazılar sıkışmasın */
+html[lang="hi"] h1{line-height:1.22;letter-spacing:0}
+html[lang="hi"] h2,html[lang="hi"] .tile.about h3{letter-spacing:0;line-height:1.3}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .lang{margin-left:auto}
+  .herorow{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr 1fr}
+  .tile{grid-column:span 1}
+  .tile.wide,.tile.about{grid-column:span 2}
+}
+@media (max-width:600px){
+  .w{padding:0 16px}
+  .hd .w{height:64px;gap:10px}
+  .hd .btn{display:none}
+  .lang .full{display:none}
+  .lang .short{display:inline}
+  .lang summary{padding:8px 12px}
+  .brand{font-size:18px}
+  .hero{padding:36px 0 36px}
+  .lead{font-size:17px}
+  .facts{gap:10px}
+  .bento{grid-template-columns:1fr}
+  .tile.wide,.tile.about{grid-column:span 1;grid-template-columns:1fr}
+  .tile.wide .art{margin:0 -16% -20% 16%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","name":"Rize Teknoloji","alternateName":"rizeteknoloji.com.tr","url":"https://rizeteknoloji.com.tr/","inLanguage":{{ld_langs}}},
+ {"@type":"Organization","name":"Rize Teknoloji","url":"https://rizeteknoloji.com.tr/","logo":"https://rizeteknoloji.com.tr/favicon.png"}
+]}
+</script>
+{{root_script}}
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gp" viewBox="0 0 24 24"><path fill="#00c4d6" d="M4 2.5 13.3 12 4 21.5a1.6 1.6 0 0 1-.8-1.4V3.9c0-.6.3-1.1.8-1.4z"/><path fill="#34d399" d="M16.4 8.9 13.3 12 4 2.5c.4-.3 1-.3 1.5 0l10.9 6.4z"/><path fill="#f6b91a" d="M20 11a1.2 1.2 0 0 1 0 2l-3.6 2.1-3.1-3.1 3.1-3.1L20 11z"/><path fill="#e53935" d="M16.4 15.1 5.5 21.5c-.5.3-1.1.3-1.5 0l9.3-9.5 3.1 3.1z"/></symbol>
+</svg>
+
+<header class="hd">
+ <div class="w">
+  <a class="brand" href="{{path}}"><img src="/favicon.png" alt="" width="40" height="40">Rize Teknoloji</a>
+  <nav class="nav" aria-label="{{nav_label}}">
+   <a href="#apps">{{nav_apps}}</a>
+   <a href="#about">{{nav_about}}</a>
+   <a href="#contact">{{nav_contact}}</a>
+  </nav>
+  <details class="lang">
+   <summary aria-label="{{lang_label}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4a14 14 0 0 1 1.9 4h-3.8A14 14 0 0 1 12 4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.4-3.6A15.7 15.7 0 0 0 8.1 8zM12 20a14 14 0 0 1-1.9-4h3.8A14 14 0 0 1 12 20zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.2 5.6a15.7 15.7 0 0 0 1.4-3.6h3a8 8 0 0 1-4.4 3.6zM16.3 14a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg><span class="full">{{lang_name}}</span><span class="short">{{lang_short}}</span></summary>
+   <ul>
+{{langmenu}}
+   </ul>
+  </details>
+  <a class="btn solid" href="{{dev_url}}"><svg aria-hidden="true"><use href="#gp"/></svg>Google Play</a>
+ </div>
+</header>
+
+<main>
+ <section class="hero">
+  <div class="w">
+   <p class="eyebrow">{{eyebrow}}</p>
+   <h1>{{h1}}</h1>
+   <div class="herorow">
+    <div>
+     <p class="lead">{{lead}}</p>
+     <div class="btns"><a class="btn solid" href="#apps">{{cta_apps}}</a><a class="btn ghost" href="{{dev_url}}">{{cta_play}}</a></div>
+    </div>
+    <ul class="facts"><li><b>6</b>{{fact_apps}}</li><li><b>3</b>{{fact_screens}}</li><li><b>1</b>{{fact_dev}}</li></ul>
+   </div>
+  </div>
+ </section>
+
+ <section id="apps">
+  <div class="w">
+   <div class="sect"><h2>{{apps_title}}</h2><p>{{apps_note}}</p></div>
+   <div class="bento">
+{{tiles}}
+    <div class="tile about" id="about">
+     <div><h3>{{about_title}}</h3><p>{{about_text}}</p></div>
+     <dl id="contact">
+      <div><dt>{{support}}</dt><dd><a href="mailto:wavvy-support@rizeteknoloji.com.tr">wavvy-support@rizeteknoloji.com.tr</a></dd></div>
+      <div><dt>{{privacy}}</dt><dd><a href="mailto:privacy@rizeteknoloji.com.tr">privacy@rizeteknoloji.com.tr</a></dd></div>
+      <div><dt>{{country}}</dt><dd>{{country_value}}</dd></div>
+     </dl>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="w">
+  <span>© <span id="y">{{year}}</span> Rize Teknoloji</span>
+  <nav aria-label="{{nav_label}}"><a href="#apps">{{nav_apps}}</a><a href="#about">{{nav_about}}</a><a href="{{dev_url}}">Google Play</a></nav>
+  <small>{{trademark}}</small>
+ </div>
+</footer>
+
+<script>
+(function(){
+  var d=document.querySelector('.lang');
+  document.addEventListener('click',function(e){ if(d.open&&!d.contains(e.target)) d.open=false; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') d.open=false; });
+  d.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){ try{ localStorage.setItem('lang',a.getAttribute('hreflang')); }catch(e){} });
+  });
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

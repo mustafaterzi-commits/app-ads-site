@@ -7,3 +7,4 @@ Sitemap: https://cam.rizeteknoloji.com.tr/sitemap.xml
 Sitemap: https://player.rizeteknoloji.com.tr/sitemap.xml
 Sitemap: https://vault.rizeteknoloji.com.tr/sitemap.xml
 Sitemap: https://beam.rizeteknoloji.com.tr/sitemap.xml
+Sitemap: https://words.rizeteknoloji.com.tr/sitemap.xml
