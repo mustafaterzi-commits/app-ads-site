@@ -6,6 +6,7 @@
 Kaynaklar: _src/template.html (sayfa şablonu), _src/strings.json (dil başına metin), bu dosyadaki APPS listesi.
 Çıktı: index.html (İngilizce, kök), <dil>/index.html, sitemap.xml.
 Yayın: GitHub Pages main dalının kökünü yayınlar; commit + push = canlı. `_src/` alt çizgiyle başladığı için yayınlanmaz.
+Yazı tipleri fonts/ altında, kendi sunucumuzdan (Google Fonts'a istek gitmesin: ziyaretçi IP'si / GDPR).
 
 Bir uygulama Google Play'e çıkınca: APPS'te o satırın `live` değerini True yap, betiği çalıştır.
 Yeni dil: strings.json'a aynı anahtarlarla bir blok ekle, betiği çalıştır.
@@ -163,7 +164,6 @@ def main():
     hreflang = '\n'.join(f'<link rel="alternate" hreflang="{c}" href="{BASE}{t["path"]}">' for c, t in strings.items())
     hreflang += f'\n<link rel="alternate" hreflang="x-default" href="{BASE}/">'
     today = datetime.date.today()
-    fonts = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700'
 
     for code, t in strings.items():
         v = {k: esc(x) for k, x in t.items()}
@@ -173,8 +173,6 @@ def main():
             nav_label=att(t['nav_label']), lang_label=att(t['lang_label']), lang_name=esc(t['name']), lang_short=code.split('-')[0].upper(),
             h1=t['h1'], hreflang=hreflang, year=str(today.year),
             ld_langs=json.dumps(list(strings)),
-            fonts_url=fonts + ('&family=Noto+Sans+Devanagari:wght@400;600;800' if code == 'hi' else '') + '&display=swap',
-            font_extra='"Noto Sans Devanagari",' if code == 'hi' else '',
             dev_url=f'https://play.google.com/store/apps/developer?id=Rize+Teknoloji&amp;hl={t["play_hl"]}',
             root_script=root_script(strings) if code == 'en' else '',
             langmenu='\n'.join(
