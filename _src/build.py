@@ -11,7 +11,7 @@ Yazı tipleri fonts/ altında, kendi sunucumuzdan (Google Fonts'a istek gitmesin
 Bir uygulama Google Play'e çıkınca: APPS'te o satırın `live` değerini True yap, betiği çalıştır.
 Yeni dil: strings.json'a aynı anahtarlarla bir blok ekle, betiği çalıştır.
 """
-import datetime, html, json, os, sys
+import datetime, hashlib, html, json, os, sys
 
 SRC = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SRC)
@@ -112,6 +112,12 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
+def img_url(name):
+    # İçerik özetli adres: ikon değişince adres de değişir, tarayıcı önbelleği eski resmi göstermez (2026-10-19).
+    with open(os.path.join(ROOT, 'img', name), 'rb') as f:
+        return f'/img/{name}?v={hashlib.sha256(f.read()).hexdigest()[:8]}'
+
+
 def att(s):
     return html.escape(s, quote=True)
 
@@ -126,7 +132,7 @@ def tile(app, t, code):
     status = f'<span class="st{" live" if live else ""}">{esc(t["live"] if live else t["soon"])}</span>'
     return (f'    <article class="tile{" wide" if aid == "tv" else ""}" style="--c:var(--{aid})">\n'
             f'     <div class="txt">\n'
-            f'      <div class="top"><img src="/img/{icon}" alt="" width="48" height="48" loading="lazy">{status}</div>\n'
+            f'      <div class="top"><img src="{img_url(icon)}" alt="" width="48" height="48" loading="lazy">{status}</div>\n'
             f'      <h3>{name}</h3>\n'
             f'      <p>{esc(t[aid])}</p>\n'
             f'      <ul class="tags">{tag_html}</ul>\n'
