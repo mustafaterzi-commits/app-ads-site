@@ -4,7 +4,7 @@
   python3 _src/build.py
 
 Kaynaklar: _src/template.html (sayfa şablonu), _src/strings.json (dil başına metin), bu dosyadaki APPS listesi.
-Çıktı: index.html (İngilizce, kök), <dil>/index.html, sitemap.xml.
+Çıktı: index.html (İngilizce, kök), <dil>/index.html, sitemap.xml, apps/index.html (sosyal medya bio linki, _src/links.html).
 Yayın: GitHub Pages main dalının kökünü yayınlar; commit + push = canlı. `_src/` alt çizgiyle başladığı için yayınlanmaz.
 Yazı tipleri fonts/ altında, kendi sunucumuzdan (Google Fonts'a istek gitmesin: ziyaretçi IP'si / GDPR).
 
@@ -34,6 +34,17 @@ APPS = [
      ['{phone}', '{tablet}', 'Android TV', 'Chromecast · DLNA']),
     ('words', 'Wavvy Words', 'wavvy-words.png', 'https://words.rizeteknoloji.com.tr/', 'com.wavvy.words', False,
      ['{phone}', '{tablet}', 'A1 → C1']),
+]
+
+# Sosyal medya bio linki apps/index.html (_src/links.html, yalnız İngilizce): sosyal medya planındaki sıra, tek satırlık metin.
+# Play linkleri sayfada ?s=<platform> ile utm_source alır; yayında olmayan uygulama kendi sitesine gider.
+LINKS = [
+    ('cam', 'All your IP cameras on your phone and TV. Any brand, one app.'),
+    ('beam', 'Send photos, videos and links from your phone to your TV.'),
+    ('vault', 'Passwords, PINs and cards that never leave your phone.'),
+    ('tv', 'A clean player for your own playlists, on phone and TV.'),
+    ('player', 'Plays every video file, from your phone, NAS or PC.'),
+    ('words', 'Learn English with a crossword in your own language.'),
 ]
 
 # Her uygulamanın ne yaptığını gösteren küçük ekran çizimi (160×100, süs; ekran okuyucudan gizli).
@@ -142,6 +153,31 @@ def tile(app, t, code):
             f'    </article>')
 
 
+def links_page():
+    apps = {a[0]: a for a in APPS}
+    icons, rows = [], []
+    for aid, line in LINKS:
+        _, name, icon, site, pkg, live, _ = apps[aid]
+        src = img_url(icon)
+        icons.append(f'<img src="{src}" alt="" width="40" height="40">')
+        if live:
+            href = (f'https://play.google.com/store/apps/details?id={pkg}&amp;referrer='
+                    'utm_source%3Dlinkinbio%26utm_medium%3Dsocial')
+            link, cls, act = f'href="{href}" data-pkg="{pkg}"', '', f'{GP}Get it on Google Play'
+        else:
+            link, cls, act = f'href="{site}"', ' soon', 'Coming soon · Website'
+        rows.append(f'  <li><a class="app{cls}" {link} style="--c:var(--{aid})">'
+                    f'<img src="{src}" alt="" width="52" height="52"><h2>{name}</h2><p>{esc(line)}</p>'
+                    f'<span class="act">{act}</span></a></li>')
+    with open(os.path.join(SRC, 'links.html'), encoding='utf-8') as f:
+        page = f.read().replace('{{icons}}', ''.join(icons)).replace('{{rows}}', '\n'.join(rows))
+    out = os.path.join(ROOT, 'apps', 'index.html')
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, 'w', encoding='utf-8') as f:
+        f.write(page)
+    print(f'links  {os.path.relpath(out, ROOT)}')
+
+
 def root_script(strings):
     """Kök sayfa: dil seçilmemişse tarayıcı diline uyan sayfaya bir kez yönlendirir (eski EN/TR otomatiğinin karşılığı)."""
     m = {}
@@ -197,6 +233,8 @@ def main():
         with open(out, 'w', encoding='utf-8') as f:
             f.write(page)
         print(f'{code:6} {os.path.relpath(out, ROOT)}')
+
+    links_page()
 
     urls = []
     for t in strings.values():
