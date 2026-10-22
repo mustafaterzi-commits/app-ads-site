@@ -17,8 +17,12 @@ SRC = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SRC)
 BASE = 'https://rizeteknoloji.com.tr'
 
-# Beam'in kendi dil sayfaları var; o dillerde bağlantı doğrudan oraya gider.
-BEAM_PATHS = {'tr': 'tr/', 'pt-BR': 'pt-br/', 'de': 'de/', 'es': 'es/', 'fr': 'fr/', 'nl': 'nl/', 'hi': 'hi/'}
+# Uygulama sitelerinin dil sayfaları: ana sitenin o dildeki sayfasından bağlantı doğrudan oraya gider; sitede o dil
+# yoksa köke (kök sayfa tarayıcı diline göre kendisi yönlendirir). Alt alan adları ana sitedeki dil seçimini
+# göremez (localStorage alan adına özel), dili bağlantı taşır. Words tek sayfa: Türkçe bölüm #tr.
+_LANG_DIRS = {'tr': 'tr/', 'pt-BR': 'pt-br/', 'de': 'de/', 'es': 'es/', 'fr': 'fr/', 'nl': 'nl/', 'hi': 'hi/'}
+SITE_PATHS = {'tv': _LANG_DIRS, 'cam': _LANG_DIRS, 'player': _LANG_DIRS, 'vault': _LANG_DIRS, 'beam': _LANG_DIRS,
+              'words': {'tr': '#tr'}}
 
 # (kimlik, ad, simge, site, paket, live, etiketler). {…} etiketleri strings.json'dan çevrilir.
 APPS = [
@@ -135,8 +139,7 @@ def att(s):
 
 def tile(app, t, code):
     aid, name, icon, site, pkg, live, tags = app
-    if aid == 'beam':
-        site += BEAM_PATHS.get(code, '')
+    site += SITE_PATHS.get(aid, {}).get(code, '')
     tag_html = ''.join(f'<li>{esc(x.format(**t))}</li>' for x in tags)
     play = (f'<a class="btn solid" href="https://play.google.com/store/apps/details?id={pkg}&amp;hl={t["play_hl"]}">{GP}Google Play</a>'
             if live else '')
