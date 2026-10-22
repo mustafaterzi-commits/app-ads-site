@@ -30,7 +30,7 @@ APPS = [
      ['Android TV', '{phone}', '{tablet}', '{langs43}']),
     ('cam', 'Wavvy IP Camera', 'wavvy-cam.png', 'https://cam.rizeteknoloji.com.tr/', 'com.wavvy.cam', True,
      ['Android TV', '{phone}', '{tablet}', 'RTSP · ONVIF']),
-    ('player', 'Wavvy Player', 'wavvy-player.png', 'https://player.rizeteknoloji.com.tr/', 'com.wavvy.player', False,
+    ('player', 'Wavvy Player', 'wavvy-player.png', 'https://player.rizeteknoloji.com.tr/', 'com.wavvy.player', True,
      ['Android TV', '{phone}', '{tablet}', 'MKV · 4K · SMB']),
     ('vault', 'Wavvy Vault', 'wavvy-vault.png', 'https://vault.rizeteknoloji.com.tr/', 'com.wavvy.vault', True,
      ['{phone}', '{tablet}', '{offline}']),
