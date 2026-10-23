@@ -22,7 +22,7 @@ BASE = 'https://rizeteknoloji.com.tr'
 # göremez (localStorage alan adına özel), dili bağlantı taşır. Words tek sayfa: Türkçe bölüm #tr.
 _LANG_DIRS = {'tr': 'tr/', 'pt-BR': 'pt-br/', 'de': 'de/', 'es': 'es/', 'fr': 'fr/', 'nl': 'nl/', 'hi': 'hi/'}
 SITE_PATHS = {'tv': _LANG_DIRS, 'cam': _LANG_DIRS, 'player': _LANG_DIRS, 'vault': _LANG_DIRS, 'beam': _LANG_DIRS,
-              'words': {'tr': '#tr'}}
+              'words': {'tr': '#tr'}, 'surf': _LANG_DIRS}
 
 # (kimlik, ad, simge, site, paket, live, etiketler). {…} etiketleri strings.json'dan çevrilir.
 APPS = [
@@ -38,6 +38,8 @@ APPS = [
      ['{phone}', '{tablet}', 'Android TV', 'Chromecast · DLNA']),
     ('words', 'Wavvy Words', 'wavvy-words.png', 'https://words.rizeteknoloji.com.tr/', 'com.wavvy.words', False,
      ['{phone}', '{tablet}', 'A1 → C1']),
+    ('surf', 'Wavvy Surf', 'wavvy-surf.png', 'https://surf.rizeteknoloji.com.tr/', 'com.wavvy.surf', False,
+     ['Android TV', 'Google TV', '{adblock}']),
 ]
 
 # Sosyal medya bio linki apps/index.html (_src/links.html, yalnız İngilizce): sosyal medya planındaki sıra, tek satırlık metin.
@@ -49,6 +51,7 @@ LINKS = [
     ('tv', 'A clean player for your own playlists, on phone and TV.'),
     ('player', 'Plays every video file, from your phone, NAS or PC.'),
     ('words', 'Learn English with a crossword in your own language.'),
+    ('surf', 'The web on your TV, without the ads. Your remote is the mouse.'),
 ]
 
 # Her uygulamanın ne yaptığını gösteren küçük ekran çizimi (160×100, süs; ekran okuyucudan gizli).
@@ -63,6 +66,23 @@ def _vault():
     rows = ''.join(_ROW.format(y=y, y4=y + 4, y8=y + 8, y10=y + 10, c=c)
                    for y, c in ((14, '#7d93ad'), (40, '#ffc233'), (66, '#7d93ad')))
     return '<rect width="160" height="100" fill="#0a1226"/>' + rows
+
+
+def _surf():
+    # TV tarayıcı: adres çubuğu, kalkan rozeti, sayfa blokları, üstünde imleç; reklam yeri çizili (engellendi).
+    return ('<rect width="160" height="100" fill="#071a2e"/>'
+            '<rect x="10" y="9" width="104" height="11" rx="5.5" fill="#fff" opacity=".14"/>'
+            '<rect x="17" y="13" width="44" height="3" rx="1.5" fill="#fff" opacity=".55"/>'
+            '<path d="M128 8l9 3v6c0 5-4 8-9 10-5-2-9-5-9-10v-6z" fill="#22c58b"/>'
+            '<path d="M124 17l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>'
+            '<rect x="10" y="28" width="66" height="40" rx="4" fill="#0f6fb8"/><path d="M38 40v16l13-8z" fill="#fff"/>'
+            '<rect x="84" y="28" width="66" height="18" rx="4" fill="none" stroke="#ff6b6b" stroke-width="1.4" stroke-dasharray="3 3" opacity=".8"/>'
+            '<path d="M111 33l12 8M123 33l-12 8" stroke="#ff6b6b" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>'
+            '<rect x="84" y="52" width="58" height="4" rx="2" fill="#fff" opacity=".3"/>'
+            '<rect x="84" y="61" width="44" height="4" rx="2" fill="#fff" opacity=".2"/>'
+            '<rect x="10" y="76" width="140" height="4" rx="2" fill="#fff" opacity=".16"/>'
+            '<rect x="10" y="85" width="96" height="4" rx="2" fill="#fff" opacity=".16"/>'
+            '<path d="M62 56l0 17 4.5-4 3.5 7.5 3-1.4-3.4-7.3 6-.6z" fill="#fff" stroke="#071a2e" stroke-width="1.2" stroke-linejoin="round"/>')
 
 
 def _words():
@@ -118,6 +138,7 @@ SCENES = {
              '<rect x="74" y="22" width="74" height="46" rx="4" fill="#b84e0c"/>'
              '<rect x="100" y="72" width="22" height="3.5" rx="1.75" fill="#fff" opacity=".35"/><path d="M105.5 37v16l13-8z" fill="#fff"/>'),
     'words': _words(),
+    'surf': _surf(),
 }
 
 GP = '<svg aria-hidden="true"><use href="#gp"/></svg>'
@@ -144,7 +165,8 @@ def tile(app, t, code):
     play = (f'<a class="btn solid" href="https://play.google.com/store/apps/details?id={pkg}&amp;hl={t["play_hl"]}">{GP}Google Play</a>'
             if live else '')
     status = f'<span class="st{" live" if live else ""}">{esc(t["live"] if live else t["soon"])}</span>'
-    return (f'    <article class="tile{" wide" if aid == "tv" else ""}" style="--c:var(--{aid})">\n'
+    wide = ' wide' if aid == 'tv' else ' wide2' if aid == 'surf' else ''
+    return (f'    <article class="tile{wide}" style="--c:var(--{aid})">\n'
             f'     <div class="txt">\n'
             f'      <div class="top"><img src="{img_url(icon)}" alt="" width="48" height="48" loading="lazy">{status}</div>\n'
             f'      <h3>{name}</h3>\n'

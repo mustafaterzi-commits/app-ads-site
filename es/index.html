@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rize Teknoloji: apps Wavvy para Android TV, teléfono y tablet</title>
-<meta name="description" content="Rize Teknoloji publica las apps Wavvy para Android TV, teléfono y tablet: Wavvy TV Plus, Wavvy IP Camera, Wavvy Player, Wavvy Vault, Wavvy Beam y Wavvy Words.">
+<meta name="description" content="Rize Teknoloji publica las apps Wavvy para Android TV, teléfono y tablet: Wavvy TV Plus, Wavvy IP Camera, Wavvy Player, Wavvy Vault, Wavvy Beam, Wavvy Words y Wavvy Surf.">
 <link rel="canonical" href="https://rizeteknoloji.com.tr/es/">
 <link rel="alternate" hreflang="en" href="https://rizeteknoloji.com.tr/">
 <link rel="alternate" hreflang="tr" href="https://rizeteknoloji.com.tr/tr/">
@@ -31,7 +31,7 @@
 /* Vitrin: büyük başlık, her uygulama kendi renginde bir kutu. Renkli kutuların üstüne hep beyaz yazı gelir. */
 :root{
   --bg:#f2f4f8; --card:#fff; --line:#dde2ec; --ink:#0b1533; --muted:#4b5672; --accent:#0b4dff;
-  --tv:#1f4fd8; --cam:#17753a; --player:#6a3fc9; --vault:#35557a; --beam:#b84e0c; --words:#0e6b6b;
+  --tv:#1f4fd8; --cam:#17753a; --player:#6a3fc9; --vault:#35557a; --beam:#b84e0c; --words:#0e6b6b; --surf:#0b5f8f;
   --gold:#ffc233; --navy:#0b1533; --bezel:#10151f;
   --display:"Bricolage Grotesque","Arial Narrow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
@@ -117,7 +117,10 @@ h2{font:800 clamp(26px,3.4vw,40px)/1.05 var(--display);letter-spacing:-.025em}
 .tile.wide{grid-column:span 4;display:grid;grid-template-columns:1fr 1.05fr;align-items:center}
 .tile.wide .art{margin:0 -22% 0 0}
 .tile.wide h3{font-size:clamp(30px,4.4vw,48px)}
-.tile.about{grid-column:span 4;background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+/* Surf geniş masaüstünde 4 sütun (Words ile aynı sırada); 900px altında sıradan kutu. */
+.tile.wide2{grid-column:span 4;display:grid;grid-template-columns:1fr 1.05fr;align-items:center}
+.tile.wide2 .art{margin:0 -22% 0 0}
+.tile.about{grid-column:span 6;background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
 .tile.about>*{min-width:0}
 .tile.about h3{font-size:24px;margin-bottom:10px}
 .tile.about p{color:var(--muted)}
@@ -145,6 +148,8 @@ html[lang="hi"] h2,html[lang="hi"] .tile.about h3{letter-spacing:0;line-height:1
   .bento{grid-template-columns:1fr 1fr}
   .tile{grid-column:span 1}
   .tile.wide,.tile.about{grid-column:span 2}
+  .tile.wide2{grid-column:span 1;display:flex}
+  .tile.wide2 .art{margin:auto -16% -20% 16%}
 }
 @media (max-width:600px){
   .w{padding:0 16px}
@@ -208,10 +213,10 @@ html[lang="hi"] h2,html[lang="hi"] .tile.about h3{letter-spacing:0;line-height:1
    <h1>Para la <mark>pantalla grande</mark>. Y para la que llevas en el bolsillo.</h1>
    <div class="herorow">
     <div>
-     <p class="lead">Apps para Android TV, teléfono y tablet: IPTV, cámaras IP, video, transmisión a la TV, contraseñas y crucigramas en inglés.</p>
+     <p class="lead">Apps para Android TV, teléfono y tablet: IPTV, cámaras IP, video, transmisión a la TV, contraseñas, crucigramas en inglés y un navegador sin anuncios.</p>
      <div class="btns"><a class="btn solid" href="#apps">Ver las apps</a><a class="btn ghost" href="https://play.google.com/store/apps/developer?id=Rize+Teknoloji&amp;hl=es-419">Nuestra página en Google Play</a></div>
     </div>
-    <ul class="facts"><li><b>6</b>apps</li><li><b>3</b>pantallas: TV, teléfono y tablet</li></ul>
+    <ul class="facts"><li><b>7</b>apps</li><li><b>3</b>pantallas: TV, teléfono y tablet</li></ul>
    </div>
   </div>
  </section>
@@ -279,6 +284,16 @@ html[lang="hi"] h2,html[lang="hi"] .tile.about h3{letter-spacing:0;line-height:1
       <div class="acts"><a class="btn ghost" href="https://words.rizeteknoloji.com.tr/">Sitio web</a></div>
      </div>
      <div class="art"><svg viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" fill="#f6f1e4"/><g stroke="#2a3b3a" stroke-width=".7" font-family="system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-weight="700" font-size="11" text-anchor="middle"><rect x="25" y="17" width="22" height="22" fill="#d3e6e1"/><rect x="47" y="17" width="22" height="22" fill="#d3e6e1"/><rect x="69" y="17" width="22" height="22" fill="#d3e6e1"/><rect x="91" y="17" width="22" height="22" fill="#d3e6e1"/><rect x="113" y="17" width="22" height="22" fill="#d3e6e1"/><rect x="25" y="39" width="22" height="22" fill="#d3e6e1"/><rect x="47" y="39" width="22" height="22" fill="#e2f0dc"/><text x="58" y="54" stroke="none" fill="#2f7d3b">S</text><rect x="69" y="39" width="22" height="22" fill="#e2f0dc"/><text x="80" y="54" stroke="none" fill="#2f7d3b">E</text><rect x="91" y="39" width="22" height="22" fill="#e2f0dc"/><text x="102" y="54" stroke="none" fill="#2f7d3b">A</text><rect x="113" y="39" width="22" height="22" fill="#e2f0dc"/><text x="124" y="54" stroke="none" fill="#2f7d3b">T</text><rect x="25" y="61" width="22" height="22" fill="#d3e6e1"/><rect x="47" y="61" width="22" height="22" fill="#ffe3a8"/><text x="58" y="76" stroke="none" fill="#1f2a2a">P</text><rect x="69" y="61" width="22" height="22" fill="#ffe3a8"/><text x="80" y="76" stroke="none" fill="#1f2a2a">A</text><rect x="91" y="61" width="22" height="22" fill="#ffc04a"/><rect x="113" y="61" width="22" height="22" fill="#e2f0dc"/><text x="124" y="76" stroke="none" fill="#2f7d3b">E</text></g></svg></div>
+    </article>
+    <article class="tile wide2" style="--c:var(--surf)">
+     <div class="txt">
+      <div class="top"><img src="/img/wavvy-surf.png?v=6e816096" alt="" width="48" height="48" loading="lazy"><span class="st">Próximamente</span></div>
+      <h3>Wavvy Surf</h3>
+      <p>Un navegador web rápido para Android TV y Google TV que bloquea anuncios y rastreadores. El control remoto funciona como ratón, los videos se ven en pantalla completa y puedes escribir desde el teléfono.</p>
+      <ul class="tags"><li>Android TV</li><li>Google TV</li><li>Bloqueador de anuncios</li></ul>
+      <div class="acts"><a class="btn ghost" href="https://surf.rizeteknoloji.com.tr/es/">Sitio web</a></div>
+     </div>
+     <div class="art"><svg viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" fill="#071a2e"/><rect x="10" y="9" width="104" height="11" rx="5.5" fill="#fff" opacity=".14"/><rect x="17" y="13" width="44" height="3" rx="1.5" fill="#fff" opacity=".55"/><path d="M128 8l9 3v6c0 5-4 8-9 10-5-2-9-5-9-10v-6z" fill="#22c58b"/><path d="M124 17l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="28" width="66" height="40" rx="4" fill="#0f6fb8"/><path d="M38 40v16l13-8z" fill="#fff"/><rect x="84" y="28" width="66" height="18" rx="4" fill="none" stroke="#ff6b6b" stroke-width="1.4" stroke-dasharray="3 3" opacity=".8"/><path d="M111 33l12 8M123 33l-12 8" stroke="#ff6b6b" stroke-width="1.6" stroke-linecap="round" opacity=".85"/><rect x="84" y="52" width="58" height="4" rx="2" fill="#fff" opacity=".3"/><rect x="84" y="61" width="44" height="4" rx="2" fill="#fff" opacity=".2"/><rect x="10" y="76" width="140" height="4" rx="2" fill="#fff" opacity=".16"/><rect x="10" y="85" width="96" height="4" rx="2" fill="#fff" opacity=".16"/><path d="M62 56l0 17 4.5-4 3.5 7.5 3-1.4-3.4-7.3 6-.6z" fill="#fff" stroke="#071a2e" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
     </article>
     <div class="tile about" id="about">
      <div><h3>Acerca de</h3><p>Rize Teknoloji es el nombre de publicación de un desarrollador de apps independiente de Turquía. No es una empresa registrada. Las apps con versión para TV están hechas para funcionar igual con el control remoto y en la pantalla táctil.</p></div>

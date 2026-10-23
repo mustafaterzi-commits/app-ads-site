@@ -23,7 +23,7 @@
 /* Vitrin: büyük başlık, her uygulama kendi renginde bir kutu. Renkli kutuların üstüne hep beyaz yazı gelir. */
 :root{
   --bg:#f2f4f8; --card:#fff; --line:#dde2ec; --ink:#0b1533; --muted:#4b5672; --accent:#0b4dff;
-  --tv:#1f4fd8; --cam:#17753a; --player:#6a3fc9; --vault:#35557a; --beam:#b84e0c; --words:#0e6b6b;
+  --tv:#1f4fd8; --cam:#17753a; --player:#6a3fc9; --vault:#35557a; --beam:#b84e0c; --words:#0e6b6b; --surf:#0b5f8f;
   --gold:#ffc233; --navy:#0b1533; --bezel:#10151f;
   --display:"Bricolage Grotesque","Arial Narrow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
@@ -109,7 +109,10 @@ h2{font:800 clamp(26px,3.4vw,40px)/1.05 var(--display);letter-spacing:-.025em}
 .tile.wide{grid-column:span 4;display:grid;grid-template-columns:1fr 1.05fr;align-items:center}
 .tile.wide .art{margin:0 -22% 0 0}
 .tile.wide h3{font-size:clamp(30px,4.4vw,48px)}
-.tile.about{grid-column:span 4;background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+/* Surf geniş masaüstünde 4 sütun (Words ile aynı sırada); 900px altında sıradan kutu. */
+.tile.wide2{grid-column:span 4;display:grid;grid-template-columns:1fr 1.05fr;align-items:center}
+.tile.wide2 .art{margin:0 -22% 0 0}
+.tile.about{grid-column:span 6;background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
 .tile.about>*{min-width:0}
 .tile.about h3{font-size:24px;margin-bottom:10px}
 .tile.about p{color:var(--muted)}
@@ -137,6 +140,8 @@ html[lang="hi"] h2,html[lang="hi"] .tile.about h3{letter-spacing:0;line-height:1
   .bento{grid-template-columns:1fr 1fr}
   .tile{grid-column:span 1}
   .tile.wide,.tile.about{grid-column:span 2}
+  .tile.wide2{grid-column:span 1;display:flex}
+  .tile.wide2 .art{margin:auto -16% -20% 16%}
 }
 @media (max-width:600px){
   .w{padding:0 16px}
@@ -196,7 +201,7 @@ html[lang="hi"] h2,html[lang="hi"] .tile.about h3{letter-spacing:0;line-height:1
      <p class="lead">{{lead}}</p>
      <div class="btns"><a class="btn solid" href="#apps">{{cta_apps}}</a><a class="btn ghost" href="{{dev_url}}">{{cta_play}}</a></div>
     </div>
-    <ul class="facts"><li><b>6</b>{{fact_apps}}</li><li><b>3</b>{{fact_screens}}</li></ul>
+    <ul class="facts"><li><b>7</b>{{fact_apps}}</li><li><b>3</b>{{fact_screens}}</li></ul>
    </div>
   </div>
  </section>
