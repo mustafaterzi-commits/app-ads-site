@@ -36,7 +36,7 @@ APPS = [
      ['{phone}', '{tablet}', '{offline}']),
     ('beam', 'Wavvy Beam', 'wavvy-beam.png', 'https://beam.rizeteknoloji.com.tr/', 'com.wavvy.beam', True,
      ['{phone}', '{tablet}', 'Android TV', 'Chromecast · DLNA']),
-    ('words', 'Wavvy Words', 'wavvy-words.png', 'https://words.rizeteknoloji.com.tr/', 'com.wavvy.words', False,
+    ('words', 'Wavvy Words', 'wavvy-words.png', 'https://words.rizeteknoloji.com.tr/', 'com.wavvy.words', True,
      ['{phone}', '{tablet}', 'A1 → C1']),
     ('surf', 'Wavvy Surf', 'wavvy-surf.png', 'https://surf.rizeteknoloji.com.tr/', 'com.wavvy.surf', False,
      ['Android TV', 'Google TV', '{adblock}']),
